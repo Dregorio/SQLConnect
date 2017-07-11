@@ -17,12 +17,12 @@ namespace SQLConnection
             var value = configuration.GetValue<string>("appsettings:host", "local");
             Console.WriteLine(value);
 
-
+            //Tak jak tutaj------------------
             var connection = new ConnectionPostgre();
             configuration.GetSection("appSettings").Bind(connection);
             Console.WriteLine($"{connection.ConnectionString}");
             var c = connection.ConnectionString;
-
+            //-------------------------
 
             var connectionString = configuration["connectionStrings:MyDb"];
             Console.WriteLine(connectionString);
